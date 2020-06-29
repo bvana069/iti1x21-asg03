@@ -1,21 +1,21 @@
 <center>
   <h1>ITI 1521. Introduction à l’informatique II</h1>
-  <h3>Devoir 2</h3>
+  <h3>Devoir 3</h3>
   <h3>Échéance: 09 jui 2020, 23 h 00</h3>
 </center>
 
 ## Objectifs d’apprentissage
 
 * Itérer à travers différents états
-* Appliquer la technique de l’indirection
+* Appliquer la technique d’indirection
 
 ## Introduction
 
-Pour le devoir précédent, nous avions autorisé le traitement des jeux symétriques. Dans cet devoir, nous supprimerons ces jeux symétriques pour rendre notre espace de recherche plus petit.
+Pour le devoir précédent, nous avions autorisé le traitement des jeux symétriques. Dans ce devoir, nous supprimerons ces jeux symétriques pour rendre l'espace de recherche plus petit.
 
 ## Symétries et itérateurs
 
-Lorsque nous avons créé notre liste de jeux pour la deuxième question du devoir 2, nous avons ajouté beaucoup de solutions qui étaient essentiellement identiques, simplement une symétrie des autres jeux déjà énumérés.
+Lorsque nous créons notre liste de jeux pour la deuxième question du devoir 2, nous avons ajouté beaucoup de solutions qui étaient essentiellement identiques, simplement une symétrie des autres jeux déjà énumérés.
 
 Examinons les symétries dans une grille de n × m. Supposons d’abord que n 􏰀 m, c’est-à-dire que la grille n’est pas carrée. Dans le cas d’une grille non carrée, nous avons essentiellement deux symétries : le basculement vertical et le basculement horizontal (Figure 1).
 
@@ -27,7 +27,7 @@ Pour chaque grille non carrée n × m, il y a jusqu’à trois grilles différen
 ![Figure 2: Les grilles non carrées ont jusqu’à trois grilles symétriques équivalentes.](figure02_non_square_symmetry.png)
 **Figure 2: Les grilles non carrées ont jusqu’à trois grilles symétriques équivalentes.**
 
-Ce qui sera pratique, c’est qu’il est possible d’itérer à travers toutes ces symétries en appliquant des transforma- tions répétées, par exemple la série symétrie horizontale, puis verticale, puis horizontale vous donnera les quatre grilles, comme le montre Figure 3.
+Ce qui sera pratique, c’est qu’il est possible d’itérer à travers toutes ces symétries en appliquant des transformations répétées, par exemple la série symétrie horizontale, puis verticale, puis horizontale vous donnera les quatre grilles, comme le montre Figure 3.
 
 ![Figure 3: Enumération de toutes les grilles symétriques non carrées.](figure03_non_square_symmetry.png)
 **Figure 3: Enumération de toutes les grilles symétriques non carrées.**
@@ -117,9 +117,9 @@ Conformément à notre approche précédente, les grilles vont être mémorisée
 public static boolean identity(int numRows, int numColumns, int[] board) {
 ```
 
-Sets the board to the identity board where the value at each index is the index itself (in other words do a "no flip" flip).  Here we ignore the current values withiin the provided board and populate each index with its index value.
+Définit la carte sur la carte d'identité où la valeur à chaque index est l'index lui-même (en d'autres termes, faites un flip "non-flip"). Ici, nous ignorons les valeurs actuelles dans la carte fournie et remplissons chaque index avec sa valeur d'index.
 
-For example, the identity board of a 3x3 game is
+Par exemple, la carte d'identité d'un jeu 3x3 est
 
 ```
  0 | 1 | 2
